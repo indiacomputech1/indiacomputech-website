@@ -337,7 +337,7 @@ export default function Contact() {
                             <div className="text-center">
                                 <MapPin size={48} className="mx-auto mb-4" />
                                 <p className="text-lg font-semibold">Map Integration</p>
-                                <p className="text-sm">Google Maps embed would go here</p>
+                                <p className="text-sm"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421.9499201580605!2d72.83946022036378!3d19.041099364352164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c931ffa94e79%3A0x370271e751df3171!2sCadel%20Castle%20Co.%20Op%20Soc.!5e0!3m2!1sen!2sin!4v1764588930413!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
                             </div>
                         </div>
                     </div>
