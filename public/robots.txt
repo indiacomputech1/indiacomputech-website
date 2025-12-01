@@ -1,0 +1,15 @@
+# robots.txt for India CompuTech
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://indiacomputech.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 10
