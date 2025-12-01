@@ -281,7 +281,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                                            <p className="text-gray-600">Artist Village, Maharashtra, IN</p>
+                                            <p className="text-gray-600">Mahim West, Mumbai, Maharashtra, IN</p>
                                         </div>
                                     </div>
 
