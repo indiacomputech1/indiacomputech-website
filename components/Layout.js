@@ -16,12 +16,17 @@ export default function Layout({ children, title, description }) {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const navigation = [
-        { name: 'Home', href: '/' },
-        { name: 'Services', href: '/services' },
-        { name: 'About', href: '/about' },
-        { name: 'Contact', href: '/contact' },
-    ]
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
     const siteTitle = title ? `${title} | India CompuTech` : 'India CompuTech - Your Technology Partners'
     const siteDescription = description || 'Leading provider of IT infrastructure, cloud solutions, security, and automation services. Strong systems. Strong outcomes.'
