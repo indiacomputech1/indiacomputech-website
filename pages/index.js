@@ -116,7 +116,7 @@ export default function Home() {
                             India CompuTech
                         </h1>
                         <p className="text-2xl md:text-4xl font-bold mb-6">
-                            <span className="text-gradient">Strong systems. Strong outcomes.</span>
+                            <span className="text-gradient">Strong systems. Stronger outcomes.</span>
                         </p>
                         <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
                             Infrastructure, Cloud, Security, and Automation services that strengthen daily operations and improve productivity.
