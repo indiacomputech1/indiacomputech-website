@@ -138,11 +138,11 @@ export default function Layout({ children, title, description }) {
                                     />
                                 </div>
                                 <p className="text-gray-400 mb-4 max-w-md">
-                                    Your Technology Partners. Building strong systems for strong outcomes.
+                                    Your Technology Partners. Building strong systems for strongeer outcomes.
                                 </p>
                                 <div className="flex space-x-4">
                                     <a
-                                        href="https://facebook.com/indiacomputech"
+                                        href="https://www.facebook.com/profile.php?id=61582348047508"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="hover:text-primary transition-colors"
