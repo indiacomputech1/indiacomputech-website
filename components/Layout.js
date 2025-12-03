@@ -138,7 +138,7 @@ export default function Layout({ children, title, description }) {
                                     />
                                 </div>
                                 <p className="text-gray-400 mb-4 max-w-md">
-                                    Your Technology Partners. Building strong systems for strongeer outcomes.
+                                    Your Technology Partners. Building strong systems for stronger outcomes.
                                 </p>
                                 <div className="flex space-x-4">
                                     <a
