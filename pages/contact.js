@@ -67,10 +67,22 @@ export default function Contact() {
 
         setSubmitStatus('sending')
 
-        // In production, replace this with actual form submission
-        // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
 
-        setTimeout(() => {
+            const result = await res.json()
+
+            if (!res.ok) {
+                console.error('API error', result)
+                setSubmitStatus('error')
+                setTimeout(() => setSubmitStatus(null), 5000)
+                return
+            }
+
             setSubmitStatus('success')
             setFormData({
                 name: '',
@@ -83,7 +95,11 @@ export default function Contact() {
 
             // Reset success message after 5 seconds
             setTimeout(() => setSubmitStatus(null), 5000)
-        }, 1500)
+        } catch (err) {
+            console.error('Submit error', err)
+            setSubmitStatus('error')
+            setTimeout(() => setSubmitStatus(null), 5000)
+        }
     }
 
     return (
