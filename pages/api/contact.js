@@ -1,6 +1,39 @@
 // API route for contact form submission
 // This is a serverless function that handles form submissions
 
+import { google } from 'googleapis'
+
+async function appendToSheet(row) {
+  const credsEnv = process.env.GOOGLE_SERVICE_ACCOUNT
+  const sheetId = process.env.GOOGLE_SHEET_ID
+
+  if (!credsEnv || !sheetId) {
+    throw new Error('Missing Google Sheets configuration (GOOGLE_SERVICE_ACCOUNT or GOOGLE_SHEET_ID)')
+  }
+
+  const creds = JSON.parse(credsEnv)
+
+  const jwt = new google.auth.JWT(
+    creds.client_email,
+    null,
+    creds.private_key,
+    ['https://www.googleapis.com/auth/spreadsheets']
+  )
+
+  const sheets = google.sheets({ version: 'v4', auth: jwt })
+
+  const resource = {
+    values: [row],
+  }
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: sheetId,
+    range: 'Sheet1!A:G',
+    valueInputOption: 'USER_ENTERED',
+    resource,
+  })
+}
+
 export default async function handler(req, res) {
     // Only allow POST requests
     if (req.method !== 'POST') {
@@ -101,17 +134,23 @@ export default async function handler(req, res) {
         })
         */
 
-        // Log submission (in production, log to a database or file)
-        console.log('Form submission received:', {
-            name,
-            email,
-            timestamp: new Date().toISOString(),
-        })
+        // Log submission
+        const timestamp = new Date().toISOString()
+        console.log('Form submission received:', { name, email, timestamp })
+
+        // Try to append to Google Sheet (if configured)
+        try {
+          const row = [timestamp, name, company || '', email, phone || '', services || '', message]
+          await appendToSheet(row)
+          console.log('Submission appended to Google Sheet')
+        } catch (sheetErr) {
+          console.warn('Google Sheets append skipped or failed:', sheetErr.message)
+        }
 
         // Send success response
         return res.status(200).json({
-            success: true,
-            message: 'Your message has been sent successfully. We will contact you soon!'
+          success: true,
+          message: 'Your message has been received. We will contact you soon!'
         })
 
     } catch (error) {
