@@ -74,10 +74,10 @@ export default function About() {
                                     India CompuTech (ICT) is a leading provider of market intelligence and technology solutions, offering a comprehensive, one-stop platform for businesses across sectors. With deep expertise and actionable insights, ICT develops, maintains, and operates advanced E-commerce and logistics platforms that simplify trading, streamline operations, and enhance business efficiency.
                                 </p>
                                 <p className="text-lg leading-relaxed">
-                                    Expanding beyond digital marketplaces, ICT delivers full-spectrum IT support services, including IT infrastructure management, email administration, CCTV system setup and monitoring, and managed IT services, ensuring organizations can operate securely and efficiently in today's fast-paced digital landscape.
+                                    Expanding beyond digital marketplaces, ICT delivers full-spectrum IT support services, including IT infrastructure management, email administration, CCTV system setup and monitoring, and managed IT services, ensuring organizations can operate securely and efficiently in today&apos;s fast-paced digital landscape.
                                 </p>
                                 <p className="text-lg leading-relaxed">
-                                    At the core of ICT's mission is the commitment to long-term partnerships, working with clients as collaborators in innovation and growth. By providing cost-effective, high-quality technology solutions coupled with exceptional support, ICT enables businesses to achieve operational excellence while fostering enduring relationships built on trust and performance.
+                                    At the core of ICT&apos;s mission is the commitment to long-term partnerships, working with clients as collaborators in innovation and growth. By providing cost-effective, high-quality technology solutions coupled with exceptional support, ICT enables businesses to achieve operational excellence while fostering enduring relationships built on trust and performance.
                                 </p>
                             </div>
                         </div>
