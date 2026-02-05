@@ -138,13 +138,21 @@ export default async function handler(req, res) {
         const timestamp = new Date().toISOString()
         console.log('Form submission received:', { name, email, timestamp })
 
-        // Try to append to Google Sheet (if configured)
-        try {
-          const row = [timestamp, name, company || '', email, phone || '', services || '', message]
-          await appendToSheet(row)
-          console.log('Submission appended to Google Sheet')
-        } catch (sheetErr) {
-          console.warn('Google Sheets append skipped or failed:', sheetErr.message)
+        // Append to Google Sheet if configured; if configured and append fails, return error
+        if (process.env.GOOGLE_SERVICE_ACCOUNT && process.env.GOOGLE_SHEET_ID) {
+          try {
+            const row = [timestamp, name, company || '', email, phone || '', services || '', message]
+            await appendToSheet(row)
+            console.log('Submission appended to Google Sheet')
+          } catch (sheetErr) {
+            console.error('Google Sheets append failed:', sheetErr)
+            return res.status(500).json({
+              error: 'Failed to save data to Google Sheets',
+              details: sheetErr.message || 'Google Sheets append error',
+            })
+          }
+        } else {
+          console.log('Google Sheets not configured; skipping append')
         }
 
         // Send success response

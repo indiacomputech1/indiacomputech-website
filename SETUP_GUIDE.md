@@ -292,6 +292,42 @@ SENDGRID_API_KEY=your_api_key
 
 3. **Update API route** with your credentials
 
+### Option 4: Google Sheets (Server-side)
+
+This project includes a `/pages/api/contact.js` endpoint that can append submissions directly to a Google Sheet using a Google Cloud service account. Use this option if you want contact submissions collected in a spreadsheet.
+
+Steps to configure:
+
+1. Enable the Google Sheets API in your Google Cloud project.
+2. Create a service account and grant it the "Editor" role for Sheets (or the minimal role you prefer).
+3. Create and download a JSON key for the service account.
+4. Share your Google Sheet with the service account email (e.g. `my-service-account@...iam.gserviceaccount.com`) with Editor access.
+5. Add the following environment variables to your deployment or `.env.local`:
+
+```env
+GOOGLE_SHEET_ID=your_spreadsheet_id_here
+GOOGLE_SERVICE_ACCOUNT='{"type":"service_account", "project_id":"...", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n", "client_email":"...@...iam.gserviceaccount.com", ... }'
+```
+
+- On macOS/Linux you can export from a file when testing locally:
+
+```bash
+export GOOGLE_SHEET_ID=1AbCdefGhiJK_lmnopQRsTuvWxYz
+export GOOGLE_SERVICE_ACCOUNT="$(cat path/to/service-account.json)"
+```
+
+- Important: do NOT commit the JSON key to git. Keep it as an environment variable or store it securely in your hosting provider's secrets.
+
+Behavior details:
+- The API will append rows to `Sheet1` in this order: `[timestamp, name, company, email, phone, services, message]`.
+- If both `GOOGLE_SERVICE_ACCOUNT` and `GOOGLE_SHEET_ID` are set, the server will attempt to write to the sheet. If the write fails, the API will return a 500 error so the client will know the submission was not saved.
+- If the env vars are not set, the API will continue to accept form submissions but will skip writing to Sheets (useful for local dev without a key).
+
+Deployment notes:
+- For Vercel, set `GOOGLE_SHEET_ID` and `GOOGLE_SERVICE_ACCOUNT` in Project Settings → Environment Variables. Paste the entire JSON into the value field.
+- For other hosts, add equivalent secret environment variables.
+
+
 ---
 
 ## 🔍 SEO Configuration
