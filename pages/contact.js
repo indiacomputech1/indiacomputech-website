@@ -96,7 +96,7 @@ export default function Contact() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
                     <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto">
-                        Ready to strengthen your IT operations? Let's talk.
+                        Ready to strengthen your IT operations? Let&apos;s talk.
                     </p>
                 </div>
             </section>
@@ -112,7 +112,7 @@ export default function Contact() {
                             {submitStatus === 'success' && (
                                 <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-6">
                                     <p className="font-semibold">Thank you for contacting us!</p>
-                                    <p className="text-sm">We'll get back to you within 24 hours.</p>
+                                    <p className="text-sm">We&apos;ll get back to you within 24 hours.</p>
                                 </div>
                             )}
 

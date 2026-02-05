@@ -209,8 +209,8 @@ export default function About() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         Ready to Work Together?
                     </h2>
-                    <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                        Let's discuss how our team can help strengthen your IT operations
+                        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                        Let&apos;s discuss how our team can help strengthen your IT operations
                     </p>
                     <Link
                         href="/contact"

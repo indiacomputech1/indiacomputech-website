@@ -269,7 +269,7 @@ export default function Home() {
                         Ready to Strengthen Your IT Operations?
                     </h2>
                     <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-on-scroll">
-                        Let's discuss how we can help you build stable, secure, and efficient systems.
+                        Let&apos;s discuss how we can help you build stable, secure, and efficient systems.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
                         <Link href="/contact" className="bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl inline-flex items-center justify-center group">
