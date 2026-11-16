@@ -27,17 +27,17 @@ export default function About() {
     ]
 
     const team = [
-        { name: 'Ahmed Patel', role: 'IT Head' },
+        { name: 'Aiman Patel', role: 'IT Head' },
         { name: 'Shoeb Shaikh', role: 'Senior IT Manager' },
-        { name: 'Tushar Sawant', role: 'IT Administrator' },
-        { name: 'Shreyal Dhume', role: 'Digital Solutions Expert' },
+        { name: 'Mandar Samarth', role: 'IT Administrator' },
+        { name: 'Shreyas Pathak', role: 'Digital Solutions Expert' },
         { name: 'Asma Shaikh', role: 'Marketing Manager' },
-        { name: 'Rehan Ansari', role: 'Hardware & Networking Expert' },
-        { name: 'Vyankatesh Bakale', role: 'Director of Photography' },
+        { name: 'Bilal Ansari', role: 'Hardware & Networking Expert' },
+        { name: 'Amit Tiwari', role: 'Director of Photography' },
         { name: 'Shayan Shaikh', role: 'Web and App Development Expert' },
-        { name: 'Roshan Lad', role: 'CCTV, IT Security and Access Control Specialist' },
-        { name: 'Swapnil Angre', role: 'Senior Graphic Designer' },
-        { name: 'Shailesh Gurav', role: 'Video Animation Specialist' },
+        { name: 'Roshani Shah', role: 'CCTV, IT Security and Access Control Specialist' },
+        { name: 'Swadesh Ambre', role: 'Senior Graphic Designer' },
+        { name: 'Vinayak Shinde', role: 'Video Animation Specialist' },
     ]
 
     const strengths = [
